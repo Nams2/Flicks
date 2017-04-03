@@ -24,7 +24,8 @@ Hint: Using the hidden property of a view can be helpful to toggle the network e
 Hint: You can simulate a network error, by turning off the wifi on your computer before running the simulator. You will also want to Reset Content and Settings in your simulator (Found under the Simulator drop down menu) before you run the app, otherwise the images will be fetched from the cache instead of the network. The setImageWithURL method stores images in cache automatically behind the scenes.
 * [+] User can pull to refresh the movie list.
 
-The following advanced user stories are optional: (high, med, and low refer to the effort to implement the feature, with high being the most work and low being the least)
+The following advanced user stories are optional: 
+(high, med, and low refer to the effort to implement the feature, with high being the most work and low being the least)
 
 * [+] Add a tab bar for Now Playing or Top Rated movies. (high)
 Hint: If you are using a storyboard for your app, there isn't a good way to use the same UIViewController for each tab of your UITabBarController. Instead, you might want to use a xib approach for each UIViewController and set up your tab bar programmatically.
@@ -39,8 +40,8 @@ Hint: The image should only fade in if it's coming from network, not cache.
 * [ ] Customize the navigation bar. (low)
 
 Additional Requirements
-Must use Cocoapods.
-Asynchronous image downloading must be implemented using the UIImageView category in the AFNetworking library.
+* [+] Must use Cocoapods.
+* [+] Asynchronous image downloading must be implemented using the UIImageView category in the AFNetworking library.
 
 
 
