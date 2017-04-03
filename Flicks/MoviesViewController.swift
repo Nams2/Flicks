@@ -102,9 +102,36 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         // If the poster_path returns nil then this block of code for setting image will be skipped
         if let posterPath = movie["poster_path"] as? String {
-            let imageUrl = NSURL(string: baseUrl + posterPath)
-            cell.posterView.setImageWith(imageUrl as! URL)
+            //let imageUrl = NSURL(string: baseUrl + posterPath)
+            //cell.posterView.setImageWith(imageUrl as! URL)
+            
+            // Fading in an Image Loaded from the Network
+            let imageRequest = URLRequest(url: NSURL(string: baseUrl + posterPath)! as URL)
+            cell.posterView.setImageWith(
+                imageRequest,
+                placeholderImage: nil,
+                success: { (imageRequest, imageResponse, image) -> Void in
+                    
+                    // imageResponse will be nil if the image is cached
+                    if imageResponse != nil {
+                        print("Image was NOT cached, fade in image")
+                        cell.posterView.alpha = 0.0
+                        cell.posterView.image = image
+                        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                            cell.posterView.alpha = 1.0
+                        })
+                    } else {
+                        print("Image was cached so just update the image")
+                        cell.posterView.image = image
+                    }
+            },
+                failure: { (imageRequest, imageResponse, error) -> Void in
+                    // do something for the failure condition
+            })
         }
+        
+        
+        
         
         print("row \(indexPath.row)")
         return cell
@@ -313,8 +340,33 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         // If the poster_path returns nil then this block of code for setting image will be skipped
         if let posterPath = movie["poster_path"] as? String {
-            let imageUrl = NSURL(string: baseUrl + posterPath)
-            cell.posterImage.setImageWith(imageUrl as! URL)
+            //let imageUrl = NSURL(string: baseUrl + posterPath)
+            //cell.posterImage.setImageWith(imageUrl as! URL)
+            
+            // Fading in an Image Loaded from the Network
+            let imageRequest = URLRequest(url: NSURL(string: baseUrl + posterPath)! as URL)
+            cell.posterImage.setImageWith(
+                imageRequest,
+                placeholderImage: nil,
+                success: { (imageRequest, imageResponse, image) -> Void in
+                    
+                    // imageResponse will be nil if the image is cached
+                    if imageResponse != nil {
+                        print("Image was NOT cached, fade in image")
+                        cell.posterImage.alpha = 0.0
+                        cell.posterImage.image = image
+                        UIView.animate(withDuration: 0.3, animations: { () -> Void in
+                            cell.posterImage.alpha = 1.0
+                        })
+                    } else {
+                        print("Image was cached so just update the image")
+                        cell.posterImage.image = image
+                    }
+            },
+                failure: { (imageRequest, imageResponse, error) -> Void in
+                    // do something for the failure condition
+            })
+            
         }
         
         print("row collection \(indexPath.row)")
