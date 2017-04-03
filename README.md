@@ -4,7 +4,7 @@ Flicks is an iOS application for checking out the latest playing movies and top 
 
 Submitted by: Namrata Mehta
 
-Time spent: 15 hours spent in total
+Time spent: 16 hours spent in total
 
 ## User Stories
 
