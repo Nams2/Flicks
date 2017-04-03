@@ -44,6 +44,23 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         self.tableView.backgroundColor = UIColor(hue: 40/360, saturation: 82/100, brightness: 94/100, alpha: 1.0)
         self.collectionView.backgroundColor = UIColor(hue: 40/360, saturation: 82/100, brightness: 94/100, alpha: 1.0)
         
+        self.navigationItem.title = "Movies"
+        if let navigationBar = navigationController?.navigationBar {
+            //navigationBar.setBackgroundImage(UIImage(named: "top_rated"), for: .default)
+            navigationBar.tintColor = UIColor(red: 1.0, green: 0.25, blue: 0.25, alpha: 0.8)
+            
+            let shadow = NSShadow()
+            shadow.shadowColor = UIColor.gray.withAlphaComponent(0.5)
+            shadow.shadowOffset = CGSize(width: 2, height: 2);
+            shadow.shadowBlurRadius = 1;
+            navigationBar.titleTextAttributes = [
+                NSFontAttributeName : UIFont.boldSystemFont(ofSize: 22),
+                NSForegroundColorAttributeName : UIColor(red: 0.5, green: 0.15, blue: 0.15, alpha: 0.8),
+                NSShadowAttributeName : shadow
+            ]
+        }
+        
+        
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refreshControlAction), for: UIControlEvents.valueChanged)
         tableView.addSubview(refreshControl)

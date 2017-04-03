@@ -41,6 +41,22 @@ class DetailViewController: UIViewController {
             }
         
         print(movie)
+        
+        self.navigationItem.title = title
+        if let navigationBar = navigationController?.navigationBar {
+            //navigationBar.setBackgroundImage(UIImage(named: "top_rated"), for: .default)
+            navigationBar.tintColor = UIColor(red: 1.0, green: 0.25, blue: 0.25, alpha: 0.8)
+            
+            let shadow = NSShadow()
+            shadow.shadowColor = UIColor.gray.withAlphaComponent(0.5)
+            shadow.shadowOffset = CGSize(width: 2, height: 2);
+            shadow.shadowBlurRadius = 1;
+            navigationBar.titleTextAttributes = [
+                NSFontAttributeName : UIFont.boldSystemFont(ofSize: 22),
+                NSForegroundColorAttributeName : UIColor(red: 0.5, green: 0.15, blue: 0.15, alpha: 0.8),
+                NSShadowAttributeName : shadow
+            ]
+        }
 
         // Do any additional setup after loading the view.
     }
