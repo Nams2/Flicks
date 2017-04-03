@@ -33,11 +33,11 @@ Hint: If you are using a storyboard for your app, there isn't a good way to use 
 Hint: The segmented control should hide/show a UITableView and a UICollectionView
 * [+] Add a search bar. (med)
 Hint: Consider using a UISearchBar for this feature. Don't use the UISearchDisplayController.
-* [ ] All images fade in as they are loading. (low)
+* [+] All images fade in as they are loading. (low)
 Hint: The image should only fade in if it's coming from network, not cache.
 * [ ] For the large poster, load the low-res image first and switch to high-res when complete. (low)
 * [ ] Customize the highlight and selection effect of the cell. (low)
-* [ ] Customize the navigation bar. (low)
+* [+] Customize the navigation bar. (low)
 
 Additional Requirements
 * [+] Must use Cocoapods.
@@ -47,7 +47,7 @@ Additional Requirements
 
 Here's a walkthrough of implemented user stories:
 
-<img src='https://github.com/Nams2/Flicks/blob/master/flickGIF.gif' title='Flicks Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://github.com/Nams2/Flicks/blob/master/flicksGIF.gif' title='Flicks Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
