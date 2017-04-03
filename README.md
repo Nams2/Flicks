@@ -36,7 +36,7 @@ Hint: Consider using a UISearchBar for this feature. Don't use the UISearchDispl
 * [+] All images fade in as they are loading. (low)
 Hint: The image should only fade in if it's coming from network, not cache.
 * [ ] For the large poster, load the low-res image first and switch to high-res when complete. (low)
-* [ ] Customize the highlight and selection effect of the cell. (low)
+* [+] Customize the highlight and selection effect of the cell. (low)
 * [+] Customize the navigation bar. (low)
 
 Additional Requirements
