@@ -98,6 +98,13 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         cell.titleLabel.text = title
         cell.overviewLabel.text = overview
         
+        //cell.selectionStyle = .none
+        
+        // Use a red color when the user selects the cell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor.gray
+        cell.selectedBackgroundView = backgroundView
+        
         let baseUrl = "https://image.tmdb.org/t/p/w500"
         
         // If the poster_path returns nil then this block of code for setting image will be skipped
